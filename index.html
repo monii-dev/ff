@@ -1205,7 +1205,39 @@
           }
         </style>
 
-    </head>
+    
+<!-- 휴대폰에서 배경 장식과 마지막 카드가 겹치지 않도록 배치만 조정합니다.
+     여백을 늘렸던 직전 수정은 적용하지 않으며 PC 레이아웃은 변경하지 않습니다. -->
+<style id="rhythm-mobile-decoration-no-overlap">
+@media (max-width:650px) {
+  /* 위쪽 장식 여유 공간으로 아래쪽의 느낌표/전구를 옮겨
+     마지막 행 단어 카드 위에 장식이 올라오지 않도록 한다. */
+  .board .rh-exclaim {
+    top: 14px !important;
+    left: 59px !important;
+    right: auto !important;
+    bottom: auto !important;
+    width: 25px !important;
+    height: 34px !important;
+    transform: rotate(-12deg) !important;
+  }
+  .board .rh-bulb {
+    top: 12px !important;
+    left: auto !important;
+    right: 59px !important;
+    bottom: auto !important;
+    width: 29px !important;
+    height: 35px !important;
+    transform: rotate(12deg) !important;
+  }
+  /* 가장 좁은 기기에서는 네 장식의 간격을 조금 더 확보한다. */
+  @media (max-width:350px) {
+    .board .rh-exclaim { left: 53px !important; width:22px !important; height:32px !important; }
+    .board .rh-bulb { right: 53px !important; width:25px !important; height:32px !important; }
+  }
+}
+</style>
+</head>
     <body>
         <button id="downloadHtml" type="button" title="현재 게임을 HTML 파일로 다운로드" aria-label="다운로드">
             <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
