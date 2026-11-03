@@ -1019,6 +1019,192 @@
         #wordEditNotice {top:112px; font-size:12px; padding:10px 12px;}
     }
 </style>
+    
+        <!-- PC 레이아웃은 그대로 유지하고 모바일 화면에서만 흐름형 레이아웃을 사용 -->
+        <style id="rhythm-mobile-responsive-20261103">
+          @media (max-width: 650px) {
+            html, body { width:100% !important; min-width:0; min-height:100%; }
+            body { overflow-x:hidden !important; }
+            .app {
+              padding:0 !important;
+              margin:0 !important;
+              display:block !important;
+              min-height:100dvh !important;
+            }
+            .screen {
+              display:flow-root !important;
+              width:100% !important;
+              min-height:100dvh !important;
+              overflow:visible !important;
+              border:none !important;
+              border-radius:0 !important;
+            }
+            .top { height:0 !important; padding:0 !important; overflow:hidden !important; }
+            .game-main-title {
+              position:absolute !important;
+              top:11px !important;
+              left:50% !important;
+              transform:translateX(-50%) !important;
+              z-index:99 !important;
+              width:max-content !important;
+              max-width:calc(100% - 24px) !important;
+              padding:8px 20px !important;
+              border-radius:999px !important;
+              font-size:clamp(20px,5.4vw,27px) !important;
+              letter-spacing:-1px !important;
+              line-height:1.2 !important;
+              white-space:nowrap !important;
+            }
+            #openWordEditor, #downloadHtml {
+              position:absolute !important;
+              z-index:122 !important;
+              top:71px !important;
+              border-radius:12px !important;
+              padding:9px 12px !important;
+              font-size:13px !important;
+              min-height:42px !important;
+              line-height:1.35 !important;
+            }
+            #openWordEditor {left:12px !important; right:auto !important;}
+            #downloadHtml {right:12px !important; left:auto !important; gap:6px;}
+            #downloadHtml span {display:inline !important;}
+            .board {
+              position:relative !important;
+              left:auto !important;
+              top:auto !important;
+              width:calc(100% - 20px) !important;
+              max-width:580px !important;
+              min-height:0 !important;
+              height:auto !important;
+              margin:132px auto 12px !important;
+              padding:60px 12px 18px !important;
+              border-radius:26px !important;
+              overflow:hidden !important;
+            }
+            .board > .header {
+              max-width:calc(100% - 34px) !important;
+              min-width:0 !important;
+              width:max-content !important;
+              margin:0 auto 17px !important;
+              padding:8px 22px !important;
+              border-radius:999px !important;
+              font-size:clamp(18px,5vw,25px) !important;
+              line-height:1.25 !important;
+              text-align:center !important;
+              white-space:normal !important;
+            }
+            #cards.cards {
+              display:grid !important;
+              grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+              grid-template-rows:repeat(4,minmax(75px,auto)) !important;
+              width:100% !important;
+              min-height:0 !important;
+              height:auto !important;
+              gap:10px !important;
+              margin:0 auto !important;
+              align-items:stretch !important;
+            }
+            #cards .card, #cards .card.active {
+              width:100% !important;
+              min-width:0 !important;
+              min-height:75px !important;
+              height:auto !important;
+              padding:9px 5px !important;
+              border-radius:14px !important;
+              font-size:clamp(22px,5.9vw,31px) !important;
+              text-align:center !important;
+            }
+            #cards .card .card-word {max-width:none !important;}
+            .rh-megaphone,.rh-lightning {top:8px !important;}
+            .rh-exclaim,.rh-bulb {bottom:5px !important;}
+            .controls {
+              position:relative !important;
+              left:auto !important;
+              bottom:auto !important;
+              top:auto !important;
+              width:calc(100% - 20px) !important;
+              max-width:580px !important;
+              min-width:0 !important;
+              margin:0 auto 26px !important;
+              padding:12px !important;
+              border-radius:20px !important;
+              display:flex !important;
+              flex-wrap:wrap !important;
+              justify-content:center !important;
+              align-items:stretch !important;
+              gap:8px !important;
+              box-sizing:border-box !important;
+            }
+            .controls > #group, .controls > #speed {
+              flex:1 1 calc(50% - 8px) !important;
+              width:calc(50% - 8px) !important;
+              max-width:100% !important;
+              min-width:0 !important;
+              height:45px !important;
+              padding:8px 9px !important;
+              font-size:14px !important;
+              border-radius:11px !important;
+              text-overflow:ellipsis !important;
+            }
+            .controls > #start, .controls > #pause, .controls > #answer {
+              flex:1 1 30% !important;
+              min-width:95px !important;
+              min-height:44px !important;
+              padding:8px 7px !important;
+              font-size:13px !important;
+              border-radius:11px !important;
+              line-height:1.35 !important;
+            }
+            .controls > #customSpeed:not(.hidden) {
+              display:flex !important;
+              flex:1 1 100% !important;
+              width:100% !important;
+              justify-content:center !important;
+              padding:2px 0 5px !important;
+            }
+            #customSpeed input {width:110px !important; height:39px !important;}
+            #randomFilters:not(.hidden) {
+              display:flex !important;
+              flex:1 1 100% !important;
+              width:100% !important;
+              gap:7px !important;
+              padding:7px 0 12px !important;
+              justify-content:center !important;
+              align-items:center !important;
+            }
+            #randomFilters .filter-title {font-size:13px !important;}
+            #randomFilters label {font-size:12px !important; padding:5px 8px !important;}
+            #reshuffleRandom {margin:0 !important; min-height:35px !important; font-size:12px !important;}
+            #wordEditorDialog {
+              padding:max(10px,env(safe-area-inset-top)) 10px max(10px,env(safe-area-inset-bottom)) !important;
+            }
+            #wordEditorDialog .word-editor-panel {
+              box-sizing:border-box !important;
+              width:100% !important;
+              max-width:580px !important;
+              max-height:calc(100dvh - 20px) !important;
+              padding:16px !important;
+              border-radius:19px !important;
+            }
+            #wordEditorDialog .edit-word-grid {grid-template-columns:1fr !important;}
+            #wordEditorDialog .editor-link-row {min-width:0 !important;}
+            #wordEditorDialog #generatedWordLink {min-width:0 !important;}
+            #wordEditNotice {max-width:calc(100% - 26px) !important; top:124px !important;}
+            .overlay {box-sizing:border-box !important; padding:12px !important;}
+            .overlay .modal {max-width:460px !important; padding:20px 16px !important;}
+            .overlay .modal h2 {font-size:clamp(21px,6vw,27px) !important;}
+            .overlay .modal p {font-size:14px !important;}
+          }
+          @media (max-width: 340px) {
+            .game-main-title {font-size:19px !important;}
+            #openWordEditor, #downloadHtml {padding:8px 9px !important; font-size:12px !important;}
+            .board {padding:57px 8px 12px !important;}
+            #cards.cards {gap:7px !important;}
+            #cards .card, #cards .card.active {font-size:21px !important; min-height:68px !important;}
+            .controls > #start, .controls > #pause, .controls > #answer {min-width:85px !important; font-size:12px !important;}
+          }
+        </style>
+
     </head>
     <body>
         <button id="downloadHtml" type="button" title="현재 게임을 HTML 파일로 다운로드" aria-label="다운로드">
@@ -1100,7 +1286,7 @@
                         </svg>
                     </div>
                     <div class="header">
-                        <span id="setNo">1/18</span>
+                        <span id="setNo">체언 1세트</span>
                     </div>
                     <div class="cards" id="cards"></div>
                 </div>
@@ -1298,7 +1484,7 @@
                     cards.appendChild(d);
                 });
                 requestAnimationFrame(fitCardWords);
-                document.getElementById('setNo').textContent = isRandom() ? '🎲 랜덤 세트' : '1/1';
+                document.getElementById('setNo').textContent = isRandom() ? '🎲 랜덤게임' : sets[idx()][0];
                 answers = false;
                 document.getElementById('answer').textContent = '정답 보기';
                 startButton.disabled = false;
@@ -2113,7 +2299,7 @@
                 copy.querySelector('#cards')?.replaceChildren();
                 copy.querySelector('#intro')?.classList.remove('hidden');
                 copy.querySelector('#finish')?.classList.add('hidden');
-                copy.querySelector('#setNo').textContent = '1/18';
+                copy.querySelector('#setNo').textContent = '체언 1세트';
                 const button = copy.querySelector('#pause');
                 if (button) button.textContent = 'Ⅱ 일시정지';
                 const startButton = copy.querySelector('#start');
